@@ -23,3 +23,6 @@ def receive2():
     data = request.json
     data2 = process2(data)
     return jsonify(data2)
+
+if _name_ == "_main_":
+    app.run(host = '0.0.0.0')
