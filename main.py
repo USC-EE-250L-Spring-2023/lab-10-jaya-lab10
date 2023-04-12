@@ -13,6 +13,14 @@ def generate_data() -> List[int]:
 
 def process1(data: List[int]) -> List[int]:
     """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+      """Run the program, offloading the specified function(s) to the server.
+    
+    Args:
+        offload: Which function(s) to offload to the server. Can be None, 'process1', 'process2', or 'both'.
+
+    Returns:
+        float: the final result of the program.
+    """
     def foo(x):
         """Find the next largest prime number."""
         while True:
@@ -23,6 +31,14 @@ def process1(data: List[int]) -> List[int]:
 
 def process2(data: List[int]) -> List[int]:
     """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+      """Run the program, offloading the specified function(s) to the server.
+    
+    Args:
+        offload: Which function(s) to offload to the server. Can be None, 'process1', 'process2', or 'both'.
+
+    Returns:
+        float: the final result of the program.
+    """
     def foo(x):
         """Find the next largest prime number."""
         while True:
@@ -56,6 +72,7 @@ def run(offload: Optional[str] = None) -> float:
             nonlocal data1
             # TODO: Send a POST request to the server with the input data
             data1 = response.json()
+            send1 = requests.post(f"{offload_url}/receive1", json = data1)
         thread = threading.Thread(target=offload_process1, args=(data,))
         thread.start()
         data2 = process2(data)
@@ -67,9 +84,37 @@ def run(offload: Optional[str] = None) -> float:
         #   Make sure to cite any sources you use to answer this question.
     elif offload == 'process2':
         # TODO: Implement this case
+        data2 = None
+        def offload_process2(data):
+            nonlocal data2
+            # TODO: Send a POST request to the server with the input data
+            data2 = response.json()
+            send2 = requests.post(f"{offload_url}/receive2", json = data2)
+        thread = threading.Thread(target=offload_process2, args=(data,))
+        thread.start()
+        data1 = process1(data)
+        thread.join()
         pass
     elif offload == 'both':
         # TODO: Implement this case
+        data1 = None
+        def offload_process1(data):
+            nonlocal data1
+            # TODO: Send a POST request to the server with the input data
+            data1 = response.json()
+            send1 = requests.post(f"{offload_url}/receive1", json = data1
+        thread1 = threading.Thread(target=offload_process1, args=(data,))
+        thread1.start() 
+        thread1.join()
+        data2 = None
+        def offload_process2(data):
+            nonlocal data2
+            # TODO: Send a POST request to the server with the input data
+            data2 = response.json()
+            send2 = requests.post(f"{offload_url}/receive2", json = data2)
+        thread2 = threading.Thread(target=offload_process2, args=(data,))
+        thread2.start()
+        thread2.join()
         pass
 
     ans = final_process(data1, data2)
@@ -79,7 +124,10 @@ def main():
     # TODO: Run the program 5 times for each offloading mode, and record the total execution time
     #   Compute the mean and standard deviation of the execution times
     #   Hint: store the results in a pandas DataFrame, use previous labs as a reference
-
+        run()
+        run(process1)
+        run(process2)
+        run(both)
 
     # TODO: Plot makespans (total execution time) as a bar chart with error bars
     # Make sure to include a title and x and y labels
