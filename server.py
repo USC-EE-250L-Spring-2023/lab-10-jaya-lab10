@@ -12,12 +12,14 @@ def index():
 # TODO: Create a flask app with two routes, one for each function.
 # The route should get the data from the request, call the function, and return the result.
 
-@app.route('/process1', methods = 'POST')
-def process1():
+@app.route('/receive1', methods = 'POST')
+def receive1():
     data = request.json
-    return jsonify(data)
+    data1 = process1(data)
+    return jsonify(data1)
 
-@app.route('/process2', methods = 'POST')
-def process2():
+@app.route('/receive2', methods = 'POST')
+def receive2():
     data = request.json
-    return jsonify(data)
+    data2 = process2(data)
+    return jsonify(data2)
