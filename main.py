@@ -129,7 +129,7 @@ def main():
         array = ['None', 'process1','process2','both']
         for mode in array: 
               times = []
-                for i in range 5:
+               for i in range 5:
                     start = time.time()
                     run(mode)
                     end = time.time()
