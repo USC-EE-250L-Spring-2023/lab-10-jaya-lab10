@@ -103,10 +103,11 @@ def run(offload: Optional[str] = None) -> float:
             # TODO: Send a POST request to the server with the input data
             data1 = response.json()
             send1 = requests.post(f"{offload_url}/receive1", json = data1
+            data2 = None
         thread1 = threading.Thread(target=offload_process1, args=(data,))
         thread1.start() 
         thread1.join()
-        data2 = None
+        
         def offload_process2(data):
             nonlocal data2
             # TODO: Send a POST request to the server with the input data
