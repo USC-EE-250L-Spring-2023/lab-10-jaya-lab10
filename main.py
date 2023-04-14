@@ -141,9 +141,9 @@ def main():
 
     # TODO: Plot makespans (total execution time) as a bar chart with error bars
     # Make sure to include a title and x and y labels
-      df = pd.DataFrame(rows, columns=['mode', 'execution_time_mean', 'execution_time_std'])
-      fig = px.bar(df,  x= 'mode', y= 'execution_time_mean', error_y = 'execution_time_std', title = "Makespans for different offloading modes', template = 'plotly_white'
-    )
+       df = pd.DataFrame(rows, columns=['mode', 'execution_time_mean', 'execution_time_std'])
+       fig = px.bar(df,  x= 'mode', y= 'execution_time_mean', error_y = 'execution_time_std', title = "Makespans for different offloading modes', template = 'plotly_white'
+       )
                            
     fig.update_layout(
         xaxis_title = "offloading mode',
