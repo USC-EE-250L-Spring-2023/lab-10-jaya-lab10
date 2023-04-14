@@ -127,7 +127,7 @@ def main():
     #   Hint: store the results in a pandas DataFrame, use previous labs as a reference
         rows = []                       
         array = ['None', 'process1','process2','both']
-        for mode in array 
+        for mode in array: 
               times = []
                  for i in range 5
                      start = time.time()
