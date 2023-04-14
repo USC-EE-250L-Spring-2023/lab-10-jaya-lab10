@@ -146,7 +146,7 @@ def main():
                            
         fig.update_layout(
         xaxis_title = 'offloading mode',
-        yaxis_title 'Makespan (seconds)')
+        yaxis_title ='Makespan (seconds)')
 
     # TODO: save plot to "makespan.png"
         fig.write_image("makespan.png")
