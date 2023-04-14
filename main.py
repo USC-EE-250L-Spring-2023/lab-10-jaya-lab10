@@ -145,7 +145,7 @@ def main():
         fig = px.bar(df,  x= 'mode', y= 'execution_time_mean', error_y = 'execution_time_std', title = 'Makespans for different offloading modes', template = 'plotly_white')
                            
         fig.update_layout(
-        xaxis_title = "offloading mode',
+        xaxis_title = 'offloading mode',
         yaxis_title 'Makespan (seconds)')
 
     # TODO: save plot to "makespan.png"
