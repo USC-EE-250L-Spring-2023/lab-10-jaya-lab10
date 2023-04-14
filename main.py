@@ -31,7 +31,7 @@ def process1(data: List[int]) -> List[int]:
 
 def process2(data: List[int]) -> List[int]:
     """TODO: Document this function. What does it do? What are the inputs and outputs?"""
-      """Run the program, offloading the specified function(s) to the server.
+    """Run the program, offloading the specified function(s) to the server.
     
     Args:
         offload: Which function(s) to offload to the server. Can be None, 'process1', 'process2', or 'both'.
