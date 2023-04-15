@@ -98,12 +98,12 @@ def run(offload: Optional[str] = None) -> float:
     elif offload == 'both':
         # TODO: Implement this case
         data1 = None
+        data2 = None
         def offload_process1(data):
             nonlocal data1
             # TODO: Send a POST request to the server with the input data
             response = requests.post(f"{offload_url}/receive1", json = data1)
             data1 = response.json()
-            data2 = None
         thread1 = threading.Thread(target=offload_process1, args=(data,))
         thread1.start() 
         thread1.join()
