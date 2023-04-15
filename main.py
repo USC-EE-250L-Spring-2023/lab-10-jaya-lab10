@@ -135,7 +135,7 @@ def main():
                     end = time.time()
                     times.append(start - end)
                     print(f"Offloading {mode} - sample {i+1}: {times[-1]:.2f}" )
-                    rows.append([mode],np.mean(times), np.std(times))        
+                    rows.append([str(mode),np.mean(times), np.std(times)])        
                  
                  
 
