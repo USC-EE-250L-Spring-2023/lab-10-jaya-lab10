@@ -71,8 +71,8 @@ def run(offload: Optional[str] = None) -> float:
         def offload_process1(data):
             nonlocal data1
             # TODO: Send a POST request to the server with the input data
+            response = requests.post(f"{offload_url}/receive1", json = data1)
             data1 = response.json()
-            send1 = requests.post(f"{offload_url}/receive1", json = data1)
         thread = threading.Thread(target=offload_process1, args=(data,))
         thread.start()
         data2 = process2(data)
@@ -88,21 +88,21 @@ def run(offload: Optional[str] = None) -> float:
         def offload_process2(data):
             nonlocal data2
             # TODO: Send a POST request to the server with the input data
+            response = requests.post(f"{offload_url}/receive2", json = data2)
             data2 = response.json()
-            send2 = requests.post(f"{offload_url}/receive2", json = data2)
         thread = threading.Thread(target=offload_process2, args=(data,))
         thread.start()
         data1 = process1(data)
         thread.join()
-        pass
+        
     elif offload == 'both':
         # TODO: Implement this case
         data1 = None
         def offload_process1(data):
             nonlocal data1
             # TODO: Send a POST request to the server with the input data
+            response = requests.post(f"{offload_url}/receive1", json = data1)
             data1 = response.json()
-            send1 = requests.post(f"{offload_url}/receive1", json = data1)
             data2 = None
         thread1 = threading.Thread(target=offload_process1, args=(data,))
         thread1.start() 
@@ -111,12 +111,12 @@ def run(offload: Optional[str] = None) -> float:
         def offload_process2(data):
             nonlocal data2
             # TODO: Send a POST request to the server with the input data
+            response = requests.post(f"{offload_url}/receive2", json = data2)
             data2 = response.json()
-            send2 = requests.post(f"{offload_url}/receive2", json = data2)
         thread_2 = threading.Thread(target=offload_process2, args=(data,))
         thread_2.start()
         thread_2.join()
-        pass
+        
 
     ans = final_process(data1, data2)
     return ans 
