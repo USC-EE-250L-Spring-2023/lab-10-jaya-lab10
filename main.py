@@ -88,7 +88,7 @@ def run(offload: Optional[str] = None) -> float:
         def offload_process2(data):
             nonlocal data2
             # TODO: Send a POST request to the server with the input data
-            response = requests.post(f"{offload_url}/receive2", json = data2)
+            response = requests.post(f"{offload_url}/receive2", json = data)
             data2 = response.json()
         thread = threading.Thread(target=offload_process2, args=(data,))
         thread.start()
@@ -102,7 +102,7 @@ def run(offload: Optional[str] = None) -> float:
         def offload_process1(data):
             nonlocal data1
             # TODO: Send a POST request to the server with the input data
-            response = requests.post(f"{offload_url}/receive1", json = data1)
+            response = requests.post(f"{offload_url}/receive1", json = data)
             data1 = response.json()
         thread1 = threading.Thread(target=offload_process1, args=(data,))
         thread1.start() 
@@ -111,7 +111,7 @@ def run(offload: Optional[str] = None) -> float:
         def offload_process2(data):
             nonlocal data2
             # TODO: Send a POST request to the server with the input data
-            response = requests.post(f"{offload_url}/receive2", json = data2)
+            response = requests.post(f"{offload_url}/receive2", json = data)
             data2 = response.json()
         thread_2 = threading.Thread(target=offload_process2, args=(data,))
         thread_2.start()
