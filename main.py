@@ -126,7 +126,7 @@ def main():
     #   Compute the mean and standard deviation of the execution times
     #   Hint: store the results in a pandas DataFrame, use previous labs as a reference
         rows = []                       
-        array = ['None', 'process1','process2','both']
+        array = [None, 'process1','process2','both']
         for mode in array: 
               times = []
               for i in range(5):
