@@ -24,5 +24,5 @@ def receive2():
     data2 = process2(data)
     return jsonify(data2)
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(host = '0.0.0.0')
