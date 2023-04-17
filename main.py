@@ -34,8 +34,7 @@ def process2(data: List[int]) -> List[int]:
     """Run the program, offloading the specified function(s) to the server.
     
     Args:
-        offload: Which function(s) to offload to the server. Can be None, 'process1', 'process2', or 'both'.
-
+        offload: Which function(s) to offload to the server.  'process2'
     Returns:
         float: the final result of the program.
     """
@@ -49,6 +48,14 @@ def process2(data: List[int]) -> List[int]:
 
 def final_process(data1: List[int], data2: List[int]) -> List[int]:
     """TODO: Document this function. What does it do? What are the inputs and outputs?"""
+    """Run the program, offloading the specified function(s) to the server.
+    Summary: This function finds 
+    Args:
+        list of integers 
+
+    Returns:
+        float: List[int] List of integers contains the mean of the differences 
+    """
     return np.mean([x - y for x, y in zip(data1, data2)])
 
 offload_url = 'http://127.0.0.1:5000' # TODO: Change this to the IP address of your server  http://172.20.10.2:5000
