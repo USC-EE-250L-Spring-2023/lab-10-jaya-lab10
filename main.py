@@ -159,6 +159,7 @@ def main():
         fig.write_image("makespan.png")
 
     # Question 4: What is the best offloading mode? Why do you think that is?
+    # Process 2 has the fastest makespan 
     # Question 5: What is the worst offloading mode? Why do you think that is?
     # Question 6: The processing functions in the example aren't very likely to be used in a real-world application. 
     #   What kind of processing functions would be more likely to be used in a real-world application?
