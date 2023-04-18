@@ -13,7 +13,11 @@ Answer: Offloading processing tasks to a PC can be beneficial in certain circums
 
 Question 2: Why do we need to join the thread here?
 
+Answer: We need to join the thread because it synchronizes the execution of multiple threads and ensure that the main program waits for the thread for process 1 to finish its task before continuing with its another execution.
+
 Question 3: Are the processing functions executing in parallel or just concurrently? What is the difference?
+
+Answer: The processing functions are executing concurrently as the processes are executed independently.The difference between concurrent and parallel processing is that concurrent processing involves executing multiple tasks or processes simultaneously, while parallel processing involves executing them truly in parallel, with each task using its own processing resources.
 
 Question 4: What is the best offloading mode? Why do you think that is?
 
