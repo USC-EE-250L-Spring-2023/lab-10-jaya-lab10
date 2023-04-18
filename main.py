@@ -159,11 +159,17 @@ def main():
         fig.write_image("makespan.png")
 
     # Question 4: What is the best offloading mode? Why do you think that is?
-    # Process 2 has the fastest makespan 
+    # Process 2 has the fastest makespan out of the four groups as the process has the simplest and faster computation than all.
     # Question 5: What is the worst offloading mode? Why do you think that is?
+    # The both condition was the worst in offloading mode as it ran through both process 1 and process 2 in order to compile. 
     # Question 6: The processing functions in the example aren't very likely to be used in a real-world application. 
     #   What kind of processing functions would be more likely to be used in a real-world application?
+    #   Model training and optimization functions that include various algorithms such as linear regression, logistic regression, 
+    # decision trees, random forests, and deep learning models like convolutional neural networks (CNN) and recurrent neural networks (RNN)
+    # are examples of function used in real-world application.
     #   When would you want to offload these functions to a server?
+    # Offloading processing functions to a server can provide several benefits in terms of scalability, security, reliability, and performance, 
+    # particularly in scenarios where the client-side device has limited resources or requires high-speed network access.
     
     
 if __name__ == '__main__':
